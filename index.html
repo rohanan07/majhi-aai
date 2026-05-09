@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Mother's Day Aai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi&family=Great+Vibes&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <style>
+        body {
+            font-family: 'Tiro Devanagari Marathi', serif;
+            background: #ffffff;
+            height: 100dvh; 
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; 
+            position: fixed;
+            width: 100%;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 182, 193, 0.4);
+            font-size: 18px;
+            pointer-events: none;
+            animation: float 8s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(110dvh) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.8; }
+            100% { transform: translateY(-10dvh) rotate(360deg); opacity: 0; }
+        }
+
+        header {
+            flex-shrink: 0;
+            padding-top: 2.5rem;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .script-font {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .aai-calligraphy {
+            height: 120px;
+            width: auto;
+            margin-top: 5px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+        }
+
+        .swiper-container-wrapper {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center;
+            width: 100%;
+            overflow: hidden;
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        .swiper {
+            width: 100%;
+            padding-bottom: 5px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-frame {
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            width: 75%; 
+            max-width: 280px;
+            height: 440px; 
+            position: relative;
+            border: 1px solid #f8fafc;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-frame img {
+            width: 100%;
+            aspect-ratio: 1 / 1.1; 
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+            flex-shrink: 0;
+        }
+
+        .caption-box {
+            padding: 12px 6px 8px 6px;
+            text-align: center;
+            flex-grow: 1;
+            overflow-y: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .marathi-text {
+            color: #334155;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        /* The New Highlight Color for First and Last Slide */
+        .highlight-text {
+            color: #9d174d;
+        }
+
+        .caption-box::-webkit-scrollbar {
+            width: 3px;
+        }
+        .caption-box::-webkit-scrollbar-thumb {
+            background: #fce7f3;
+            border-radius: 10px;
+        }
+
+        .swipe-hint-container {
+            width: 82%;
+            max-width: 320px;
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 12px;
+            opacity: 0.7;
+        }
+
+        .swipe-hint {
+            font-family: 'Poppins', sans-serif;
+            color: #be185d;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            animation: slideHint 2s infinite;
+        }
+
+        @keyframes slideHint {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(8px); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="heart-container"></div>
+
+    <header class="text-center">
+        <h1 class="script-font text-4xl text-rose-600">Happy Mother's Day</h1>
+        <p class="text-gray-400 text-[10px] uppercase tracking-[0.4em] mt-2 font-medium">For My Dearest</p>
+        <img src="aai.png" alt="आई" class="aai-calligraphy">
+    </header>
+
+    <div class="swiper-container-wrapper">
+        <div class="swipe-hint-container">
+            <div class="swipe-hint">
+                SWIPE 
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                
+                <!-- Slide 0 -->
+                <div class="swiper-slide">
+                    <div class="card-frame border-rose-50">
+                        <img src="download.jpeg" alt="Cover">
+                        <div class="caption-box">
+                            <p class="marathi-text font-bold highlight-text">Hi आई, सर्वांत अगोदर Mother's Day च्या खूप खूप शुभेच्छा. तू नेहमी आनंदी आणि हसत राहावं हीच देवाकडे प्रार्थना करतो....</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="card-frame">
+                        <img src="mom1.jpeg" alt="Mom 1">
+                        <div class="caption-box">
+                            <p class="marathi-text">आजकाल माझा दिवस कितीही खराब असला तरी रात्री तुझ्यासोबत फोनवर बोलल्यानंतर मी सगळं दुःख विसरून जातो. Video call वर तुझा चेहरा पाहिला की मनाला खूप आराम मिळतो....</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="card-frame">
+                        <img src="mom2.jpeg" alt="Mom 2">
+                        <div class="caption-box">
+                            <p class="marathi-text">मला तुझी माफी पण मागायची आहे. आत्तापर्यंत मी तुला कळत नकळत दुखावलं असणार. माझ्या स्वागताच्या कार्यक्रमा वेळी मी नकळत फक्त पप्पांचं नाव घेतलं, पण तुला किती दुःखं झालं असेल हे मला नंतर कळालं. त्यासाठी मला खरचं माफ कर.....</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="card-frame">
+                        <img src="mom3.jpeg" alt="Mom 3">
+                        <div class="caption-box">
+                            <p class="marathi-text">तू माझ्यासाठी किती महत्त्वाची आहेस हे हॉस्टेलला आल्यावरच समजलं. "स्वामी तिन्ही जगाचा आईविना भिकारी" या वाक्याचा खरा अर्थ तुझ्यापासून लांब गेल्यावरच कळला....</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                    <div class="card-frame">
+                        <img src="mom4.jpeg" alt="Mom 4">
+                        <div class="caption-box">
+                            <p class="marathi-text">मला तुझे आणि पप्पांचे सगळे स्वप्न पूर्ण करायचे आहेत. या जगातील सगळं सुख तुमच्या चरणांत आणून ठेवायचं आहे. मी promise करतो की मी तुला जेवढी स्वप्न दाखवली आहेत, ती सगळं पुर्ण करणार.....</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="swiper-slide">
+                    <div class="card-frame border-rose-50">
+                        <img src="mom5.jpeg" alt="Mom 5">
+                        <div class="caption-box">
+                            <p class="marathi-text font-bold highlight-text">प्रत्येक जन्मात देवाने तुलाच माझी आई म्हणून द्यावं एवढीच माझी त्याच्याकडे प्रार्थना. आजकाल तुझ्यापासून दूर राहायला नाही जमत. घरी येऊन तुझ्या मीठीत शांत झोपायचय, एवढीच इच्छा आहे.....  <br><br>Happy Mother's Day आई 💖</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "cards",
+            grabCursor: true,
+            touchRatio: 1.5,
+            resistanceRatio: 0,
+            edgeSwipeDetection: true,
+            cardsEffect: {
+                slideShadows: false,
+                rotate: true,
+                perSlideOffset: 6, 
+                perSlideRotate: 2, 
+            },
+            speed: 500,
+        });
+
+        const container = document.getElementById('heart-container');
+        function addHeart() {
+            const h = document.createElement('div');
+            h.classList.add('heart');
+            h.innerHTML = Math.random() < 0.7 ? '🌸' : '💖';
+            h.style.left = Math.random() * 100 + 'vw';
+            h.style.animationDuration = (Math.random() * 3 + 6) + 's';
+            container.appendChild(h);
+            setTimeout(() => h.remove(), 8000);
+        }
+        setInterval(addHeart, 500);
+    </script>
+</body>
+</html>
